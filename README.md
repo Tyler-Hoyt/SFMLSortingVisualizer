@@ -17,3 +17,4 @@ This was thrown together in less than 24 hours.
 
 ## Controls
 Press space to sort.
+Press r to get new data set.
