@@ -1,5 +1,6 @@
 # SFMLSortingVisualizer
 Sorting visualizer using the SFML library.
+This was thrown together in less than 24 hours.
 
 
 ## Packages Needed For SFML
@@ -15,4 +16,4 @@ Sorting visualizer using the SFML library.
 10. vorbis
 
 ## Controls
-
+Press space to sort.
