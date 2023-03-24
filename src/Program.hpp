@@ -2,23 +2,22 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-
-#include "Container.hpp"
+#include <vector>
+#include <cstdlib>
 
 class Program {
     private:
         sf::RenderWindow window;
-    
-        Container mainContainer;
 
-        std::vector<sf::RectangleShape> barContainer;
-
+        std::vector<int> vec;
+        
         void handleEvents();
         void update();
         void render();
 
     public:
         void run();
+        void newData();
 
     public:
         Program();
