@@ -13,7 +13,7 @@ class Program {
         
         void handleEvents();
         void update();
-        void render();
+        void render(int j);
 
     public:
         void run();

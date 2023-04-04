@@ -1,8 +1,9 @@
 #include "Program.hpp"
+#include <memory>
 
 Program::Program() {
     window.create(sf::VideoMode(1600, 900), "SFML Sort");
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < 500; i++) {
         vec.push_back(rand() % 800 + 1); 
     }
 }
@@ -21,7 +22,7 @@ void Program::handleEvents() {
                     for(int j = 0; j < vec.size() - i - 1; j++) {
                         if(vec[j] > vec[j + 1]) {
                             std::swap(vec[j], vec[j + 1]);
-                            render();
+                            render(j);
                         }
                     }
                 }
@@ -36,16 +37,19 @@ void Program::handleEvents() {
 
 void Program::newData() {
     vec.clear();
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < 500; i++) {
         vec.push_back(rand() % 800 + 1);
     }
 }
 
-void Program::render() {
+void Program::render(int j) {
     window.clear(sf::Color::Black);
     for(int i = 0; i < vec.size(); i++) {
-        sf::RectangleShape shape(sf::Vector2f(16, -vec[i]));
-        shape.setPosition(i * 16, 900);
+        sf::RectangleShape shape(sf::Vector2f(3.2, -vec[i]));
+        shape.setPosition(i * 3.2, 900);
+        if(i == j) {
+            shape.setFillColor(sf::Color::Red);
+        }
         window.draw(shape);
     }
     window.display();
@@ -54,6 +58,6 @@ void Program::render() {
 void Program::run() {
     while(window.isOpen()) {
         handleEvents();
-        render();
+        render(101); // A bad way to handle this but it works so.
     }
 }
